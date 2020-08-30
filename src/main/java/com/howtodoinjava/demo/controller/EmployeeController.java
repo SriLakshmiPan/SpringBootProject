@@ -17,6 +17,7 @@ import com.howtodoinjava.demo.model.Employee;
 @RestController//Annotation to control the program 
 public class EmployeeController {
 
+	
 	List<Employee> employeesList = new ArrayList<Employee>();//List is to add all employee details
 
 //	@RequestMapping(method = RequestMethod.GET)//RequestMapping annotation to call get method
@@ -36,15 +37,15 @@ public class EmployeeController {
 		return "Employee Added";
 	 }
 	 @GetMapping("/employees")
-//	 public List<Employee> getEmployees1() 
-	 public String getEmployees1()
+	 public List<Employee> getEmployees1() 
+//	 public String getEmployees1()
 	    {
-		 String tt1 = null;
-			//return employeesList;
-		 for (int i = 0; i < employeesList.size(); i++) {
-	            tt1= tt1 + employeesList.get(i).toString() + "\n";
-	        }
-		 return tt1;
+//		 String tt1 = null;
+			return employeesList;
+//		 for (int i = 0; i < employeesList.size(); i++) {
+//	            tt1= tt1 + employeesList.get(i).toString() + "\n";
+//	        }
+//		 return tt1;
 	    }
 //	 }
 	

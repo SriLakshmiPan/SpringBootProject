@@ -4,7 +4,7 @@ import java.io.Serializable;
 
 import lombok.Data;
 
-@Data
+//@Data
 public class Employee implements Serializable {
 
 	private static final long serialVersionUID = 3306262202463164113L;
@@ -53,9 +53,9 @@ public class Employee implements Serializable {
 	    this.lastName = lastName;
 	    this.email = email;
 	  }
-//	@Override
-//	public String toString() {//returns a string representation of an object
-//		return "Employee [id=" + id + ", firstName=" + firstName
-//				+ ", lastName=" + lastName + ", email=" + email + "]";
-//	}
+	@Override
+	public String toString() {//returns a string representation of an object
+		return "Employee [id=" + id + ", firstName=" + firstName
+				+ ", lastName=" + lastName + ", email=" + email + "]";
+	}
 }
