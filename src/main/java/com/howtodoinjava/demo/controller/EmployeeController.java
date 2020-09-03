@@ -11,16 +11,13 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.howtodoinjava.demo.model.request.Employee;
-import com.howtodoinjava.demo.model.request.EmployeeId;
-import com.howtodoinjava.demo.model.response.EmployeeDetailsResponse;
 
-@RequestMapping("/sample") // url
+@RequestMapping("/employee") // url
 @RestController // Annotation to control the program
 public class EmployeeController {
 	List<Employee> employeesList = new ArrayList<Employee>();// List is to add all employee details
-	Employee emp = new Employee();
 
-	@PostMapping("/employees")
+	@PostMapping("/addEmployeeDetails")
 	public String newEmployee(@RequestBody Employee newEmployee) {
 		employeesList.add(newEmployee);
 		return "Employee Added";
@@ -37,7 +34,6 @@ public class EmployeeController {
 	}
 
 	@GetMapping("/getEmployeeDetailsbyID")
-//	public Integer getEmployeeDetails (@RequestParam Integer empId) {
 	public Employee getEmployeeDetails(@RequestParam Integer empId) {
 		System.out.println("employeesList" + employeesList.toString());
 		for (Employee emp : employeesList) {
@@ -46,8 +42,6 @@ public class EmployeeController {
 			}
 		}
 		return null;
-
-//		return empDetails;
 	}
 
 }
